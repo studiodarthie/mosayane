@@ -1,15 +1,17 @@
 import { prisma } from '@/lib/prisma';
 import { revalidatePath } from 'next/cache';
 import Image from 'next/image';
+import { put } from '@vercel/blob';
 
 async function addPhoto(formData: FormData) {
   'use server';
   const title = formData.get('title') as string;
-  const url = formData.get('url') as string;
+  const file = formData.get('file') as File;
   
-  if (title && url) {
+  if (title && file && file.size > 0) {
+    const blob = await put(file.name, file, { access: 'public' });
     await prisma.photo.create({
-      data: { title, url }
+      data: { title, url: blob.url }
     });
     revalidatePath('/photos');
     revalidatePath('/blog');
@@ -44,10 +46,11 @@ export default async function AdminPhotosPage() {
             <input type="text" name="title" placeholder="Description de la photo" required style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ccc' }} />
           </div>
           <div style={{ flex: '2 1 300px' }}>
-            <input type="text" name="url" placeholder="URL de l'image (ex: /uploads/photo.jpg)" required style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ccc' }} />
+            <input type="file" name="file" accept="image/*" required style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ccc', background: '#fff' }} />
           </div>
           <button type="submit" className="btn-primary" style={{ border: 'none', padding: '10px 24px' }}>Ajouter</button>
         </form>
+
       </div>
 
       <h3 style={{ fontSize: '16px', fontWeight: 600, marginBottom: '16px' }}>Photos existantes</h3>

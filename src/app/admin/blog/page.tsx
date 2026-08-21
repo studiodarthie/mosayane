@@ -18,13 +18,9 @@ export default async function AdminBlogPage() {
     let coverImage = null;
 
     if (coverImageFile && coverImageFile.size > 0) {
-      const buffer = Buffer.from(await coverImageFile.arrayBuffer());
-      const filename = `${Date.now()}-${coverImageFile.name.replace(/[^a-zA-Z0-9.-]/g, '')}`;
-      const fs = await import('fs/promises');
-      const path = await import('path');
-      const filepath = path.join(process.cwd(), 'public/uploads', filename);
-      await fs.writeFile(filepath, buffer);
-      coverImage = `/uploads/${filename}`;
+      const { put } = await import('@vercel/blob');
+      const blob = await put(coverImageFile.name, coverImageFile, { access: 'public' });
+      coverImage = blob.url;
     }
 
     if (title && slug && content) {

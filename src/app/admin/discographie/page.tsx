@@ -1,17 +1,19 @@
 import { prisma } from '@/lib/prisma';
 import { revalidatePath } from 'next/cache';
+import { put } from '@vercel/blob';
 
 async function addRelease(formData: FormData) {
   'use server';
   const title = formData.get('title') as string;
   const year = formData.get('year') as string;
   const url = formData.get('url') as string;
-  const cover = formData.get('cover') as string;
+  const file = formData.get('cover') as File;
   const type = formData.get('type') as string;
   
-  if (title && url && type && year && cover) {
+  if (title && url && type && year && file && file.size > 0) {
+    const blob = await put(file.name, file, { access: 'public' });
     await prisma.release.create({
-      data: { title, year, url, cover, type }
+      data: { title, year, url, cover: blob.url, type }
     });
     revalidatePath('/discographie');
     revalidatePath('/admin/discographie');
@@ -46,7 +48,7 @@ export default async function AdminDiscographiePage() {
           </select>
           <input type="text" name="title" placeholder="Titre (ex: AFIDI)" required style={{ padding: '10px', borderRadius: '6px', border: '1px solid #ccc' }} />
           <input type="text" name="year" placeholder="Année (ex: 2023)" required style={{ padding: '10px', borderRadius: '6px', border: '1px solid #ccc' }} />
-          <input type="text" name="cover" placeholder="URL de la pochette (ex: /uploads/AFIDI.webp)" required style={{ padding: '10px', borderRadius: '6px', border: '1px solid #ccc' }} />
+          <input type="file" name="cover" accept="image/*" required style={{ padding: '10px', borderRadius: '6px', border: '1px solid #ccc', background: '#fff' }} />
           <input type="url" name="url" placeholder="Lien Apple Music / Spotify" required style={{ padding: '10px', borderRadius: '6px', border: '1px solid #ccc', gridColumn: 'span 2' }} />
           <button type="submit" className="btn-primary" style={{ border: 'none', justifySelf: 'start', padding: '10px 24px' }}>Ajouter</button>
         </form>
