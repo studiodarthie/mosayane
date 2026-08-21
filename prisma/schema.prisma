@@ -1,6 +1,6 @@
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 generator client {
@@ -22,10 +22,55 @@ model TourDate {
 }
 
 model MediaLink {
-  id        String   @id @default(cuid())
-  type      String   // "youtube" or "soundcloud"
+  id        String   @id @default(uuid())
+  type      String   // "youtube" | "soundcloud"
   title     String
   url       String
-  duration  String?
+  duration  String?  // e.g. "4:30"
+  createdAt DateTime @default(now())
+}
+
+model BlogPost {
+  id          String   @id @default(uuid())
+  title       String
+  slug        String   @unique
+  excerpt     String
+  content     String
+  coverImage  String?
+  publishedAt DateTime @default(now())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model ContactMessage {
+  id        String   @id @default(uuid())
+  name      String
+  email     String
+  phone     String?
+  message   String
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model NewsletterSubscriber {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  createdAt DateTime @default(now())
+}
+
+model Photo {
+  id        String   @id @default(uuid())
+  title     String
+  url       String
+  createdAt DateTime @default(now())
+}
+
+model Release {
+  id        String   @id @default(uuid())
+  title     String
+  year      String
+  url       String
+  cover     String
+  type      String   // "single" | "album"
   createdAt DateTime @default(now())
 }
