@@ -1,0 +1,31 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model BioContent {
+  id        Int      @id @default(1)
+  content   String
+  updatedAt DateTime @updatedAt
+}
+
+model TourDate {
+  id        String   @id @default(cuid())
+  date      String
+  location  String
+  ticketUrl String?
+  createdAt DateTime @default(now())
+}
+
+model MediaLink {
+  id        String   @id @default(cuid())
+  type      String   // "youtube" or "soundcloud"
+  title     String
+  url       String
+  duration  String?
+  createdAt DateTime @default(now())
+}
