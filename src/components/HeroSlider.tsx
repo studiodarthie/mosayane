@@ -56,7 +56,7 @@ export default function HeroSlider() {
       
       {/* Main Content */}
       <div className="layout-wrapper" style={{ position: 'relative', paddingBottom: '64px', zIndex: 2 }}>
-        <h1 className="h1-hero" style={{ color: '#F7F5F2' }}>Mosayane</h1>
+        <h1 className="h1-hero" style={{ color: '#F7F5F2' }}>Mosayane 2 Claire</h1>
         <p className="subtitle-hero" style={{ color: '#F7F5F2' }}>Une voix sans frontières</p>
         <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
           <Link href="/bio" className="btn-primary">Découvrir sa bio</Link>
