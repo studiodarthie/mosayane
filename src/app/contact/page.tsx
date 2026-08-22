@@ -6,20 +6,11 @@ import { submitContactForm, subscribeNewsletter } from './actions';
 
 export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [mailto, setMailto] = useState('');
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     
-    // Calculate mailto link just in case
-    const name = formData.get('name') as string;
-    const phone = formData.get('phone') as string;
-    const message = formData.get('message') as string;
-    const body = `Nom: ${name}${phone ? `\nTéléphone: ${phone}` : ''}\n\n${message}`;
-    const mailtoUrl = `mailto:contact@mosayanemusic.com?subject=${encodeURIComponent(`Message depuis le site — ${name}`)}&body=${encodeURIComponent(body)}`;
-    setMailto(mailtoUrl);
-
     // Call server action
     await submitContactForm(formData);
     
@@ -74,8 +65,7 @@ export default function ContactPage() {
             ) : (
               <div style={{ marginTop: '20px' }}>
                 <h3 className="h2-subtitle" style={{ fontSize: '22px', margin: '0 0 10px', color: 'var(--ink-light)' }}>Merci !</h3>
-                <p style={{ fontSize: '15px', lineHeight: 1.6, opacity: 0.75, margin: '0 0 20px' }}>Votre message a bien été préparé. Nous vous répondrons dès que possible.</p>
-                <a href={mailto} className="btn-primary">Ouvrir mon client email</a>
+                <p style={{ fontSize: '15px', lineHeight: 1.6, opacity: 0.75, margin: '0 0 20px' }}>Votre message a bien été envoyé. Nous vous répondrons dès que possible.</p>
                 <div style={{ marginTop: '20px' }}>
                   <button type="button" onClick={() => setIsSubmitted(false)} style={{ background: 'none', border: 'none', color: 'var(--ink-light)', opacity: 0.6, fontSize: '13px', textDecoration: 'underline', cursor: 'pointer', padding: 0 }}>Envoyer un autre message</button>
                 </div>
