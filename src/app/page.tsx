@@ -25,10 +25,10 @@ export default async function Home() {
   const musicToDisplay = musicLinks.length > 0 ? musicLinks : defaultMusic;
 
   const defaultVideos = [
-    { id: '1', title: 'MOSAYANE 2 Claire "NO WAY" — live acoustique (family time)', url: '' },
-    { id: '2', title: 'MOSAYANE 2 CLAIRE — Là-bas comme ici (JMC sound checking)', url: '' },
-    { id: '3', title: 'MOSAYANE 2 CLAIRE — Ekié, live (JMC 2023)', url: '' },
-    { id: '4', title: 'MOSAYANE 2 CLAIRE — Massuk, live acoustique (WAN Show 2022)', url: '' },
+    { id: '1', title: 'MOSAYANE 2 Claire "NO WAY" — live acoustique (family time)', url: 'https://www.youtube.com/embed/zjZhEkcmtI8' },
+    { id: '2', title: 'MOSAYANE 2 CLAIRE — Là-bas comme ici (JMC sound checking)', url: 'https://www.youtube.com/embed/upHDIrSpD8s' },
+    { id: '3', title: 'MOSAYANE 2 CLAIRE — Ekié, live (JMC 2023)', url: 'https://www.youtube.com/embed/rnD-k3rYuzk' },
+    { id: '4', title: 'MOSAYANE 2 CLAIRE — Massuk, live acoustique (WAN Show 2022)', url: 'https://www.youtube.com/embed/qsGyYAJIGiA' },
   ];
   const videosToDisplay = videoLinks.length > 0 ? videoLinks : defaultVideos;
 
