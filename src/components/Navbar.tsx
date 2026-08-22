@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+import Image from 'next/image';
+
 export function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +21,9 @@ export function Navbar() {
 
   return (
     <nav className={`navbar ${isOpen ? 'open' : ''}`}>
-      <Link href="/" className="navbar-brand">Mosayane</Link>
+      <Link href="/" className="navbar-brand" style={{ display: 'flex', alignItems: 'center' }}>
+        <Image src="/uploads/logo-mosayane.png" alt="Mosayane" width={120} height={32} style={{ objectFit: 'contain' }} priority />
+      </Link>
       
       {/* Mobile Toggle Button */}
       <button 
