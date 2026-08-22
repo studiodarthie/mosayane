@@ -19,7 +19,8 @@ export default function VideoPlayer({ url, title }: VideoPlayerProps) {
   };
 
   const videoId = getYoutubeId(url);
-  const thumbnailUrl = videoId ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg` : '';
+  // Use hqdefault.jpg instead of maxresdefault.jpg because maxres doesn't exist for older videos
+  const thumbnailUrl = videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : '';
 
   if (!url) {
     return (
