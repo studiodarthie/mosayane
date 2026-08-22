@@ -19,7 +19,7 @@ export default async function Home() {
   const bioText = bio?.content ? bio.content.substring(0, 250) + '...' : defaultBio;
 
   const defaultVideos = [
-    { id: '1', title: '"NO WAY" — live acoustique (family time)', url: 'https://www.youtube.com/embed/zjZhEkcmtI8' },
+    { id: '1', title: 'Natural woman (reprise version Céline Dion)', url: 'https://www.youtube.com/embed/H1c55KY4ioA' },
     { id: '2', title: 'Là-bas comme ici (JMC sound checking)', url: 'https://www.youtube.com/embed/upHDIrSpD8s' },
     { id: '3', title: 'Ekié, live (JMC 2023)', url: 'https://www.youtube.com/embed/rnD-k3rYuzk' },
     { id: '4', title: 'Massuk, live acoustique (WAN Show 2022)', url: 'https://www.youtube.com/embed/qsGyYAJIGiA' },
