@@ -1,5 +1,5 @@
 import { prisma } from '@/lib/prisma';
-
+import VideoPlayer from '@/components/VideoPlayer';
 export default async function VideosPage() {
   const videoLinks = await prisma.mediaLink.findMany({
     where: { type: 'youtube' },
@@ -33,15 +33,7 @@ export default async function VideosPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(320px,1fr))', gap: '24px', marginBottom: '40px' }}>
             {videosToDisplay.map((video) => (
               <div key={video.id}>
-                <div style={{ position: 'relative', aspectRatio: '16/9', background: '#000', borderRadius: '4px', overflow: 'hidden' }}>
-                  <iframe 
-                    src={video.url} 
-                    title={video.title} 
-                    style={{ width: '100%', height: '100%', border: 0 }} 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowFullScreen>
-                  </iframe>
-                </div>
+                <VideoPlayer url={video.url} title={video.title} />
                 <p style={{ fontSize: '14px', margin: '10px 0 0', color: 'var(--ink-dark)' }}>{video.title}</p>
               </div>
             ))}

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { prisma } from '@/lib/prisma';
+import VideoPlayer from '@/components/VideoPlayer';
 
 export default async function Home() {
   const bio = await prisma.bioContent.findFirst({ where: { id: 1 } });
@@ -142,20 +143,8 @@ export default async function Home() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '24px' }}>
             {videosToDisplay.map((video) => (
               <div key={video.id}>
-                <div style={{ aspectRatio: '16/9', borderRadius: '4px', overflow: 'hidden', boxShadow: '0 20px 50px rgba(0,0,0,0.1)', background: '#111', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
-                  {video.url ? (
-                    <iframe 
-                      style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-                      src={video.url}
-                      title={video.title} 
-                      frameBorder="0" 
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                      allowFullScreen>
-                    </iframe>
-                  ) : (
-                    <span style={{ color: '#F7F5F2', opacity: 0.4, fontSize: '13px' }}>Lien YouTube à ajouter</span>
-                  )}
-                </div>
+                <VideoPlayer url={video.url} title={video.title} />
+
                 <p style={{ fontSize: '14.5px', margin: '12px 0 0' }}>{video.title}</p>
               </div>
             ))}
