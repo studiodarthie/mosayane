@@ -46,8 +46,8 @@ export default async function Home() {
       {/* Mini Audio Player Section */}
       <section style={{ padding: '30px 20px', background: 'var(--bg-color)' }}>
         <CustomAudioPlayer 
-          title="Mosayane - Ekié (Extrait Audio)" 
-          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" 
+          title="Mosayane - Mintie" 
+          src="/uploads/Mintie.mp3" 
         />
       </section>
 
