@@ -369,3 +369,132 @@
     color: #F7F5F2;
   }
 }
+
+/* Custom Audio Player */
+.custom-audio-player {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--bg-color);
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 40px;
+  padding: 8px 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.player-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.play-btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.play-btn:hover {
+  transform: scale(1.05);
+}
+
+.player-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.track-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-dark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.progress-container {
+  width: 100%;
+  height: 4px;
+  background: #E5E5E5;
+  border-radius: 2px;
+  position: relative;
+}
+
+.progress-slider, .volume-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  outline: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.progress-slider::-webkit-slider-thumb, .volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+}
+
+.progress-slider {
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100px;
+}
+
+.mute-btn {
+  background: none;
+  border: none;
+  color: var(--ink-dark);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  opacity: 0.7;
+}
+
+.mute-btn:hover {
+  opacity: 1;
+}
+
+.volume-slider {
+  position: relative;
+  height: 4px;
+  background: #E5E5E5;
+  border-radius: 2px;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 600px) {
+  .volume-control {
+    display: none;
+  }
+}

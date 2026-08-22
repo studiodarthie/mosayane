@@ -4,6 +4,8 @@ import HeroSlider from '@/components/HeroSlider';
 import { prisma } from '@/lib/prisma';
 import VideoPlayer from '@/components/VideoPlayer';
 
+import CustomAudioPlayer from '@/components/CustomAudioPlayer';
+
 export default async function Home() {
   const bio = await prisma.bioContent.findFirst({ where: { id: 1 } });
   
@@ -40,6 +42,14 @@ export default async function Home() {
     <main>
       {/* Hero Section */}
       <HeroSlider />
+
+      {/* Mini Audio Player Section */}
+      <section style={{ padding: '30px 20px', background: 'var(--bg-color)' }}>
+        <CustomAudioPlayer 
+          title="Mosayane - Ekié (Extrait Audio)" 
+          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" 
+        />
+      </section>
 
       {/* Marquee */}
       <section className="bg-light" style={{ padding: '20px 0 40px', overflow: 'hidden' }}>

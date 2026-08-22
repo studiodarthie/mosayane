@@ -18,7 +18,7 @@ export function Navbar() {
   };
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${isOpen ? 'open' : ''}`}>
       <Link href="/" className="navbar-brand">Mosayane</Link>
       
       {/* Mobile Toggle Button */}
