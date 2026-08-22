@@ -307,6 +307,14 @@
     flex-wrap: nowrap;
     padding: 16px 20px;
   }
+  .navbar.open {
+    backdrop-filter: none;
+    background: transparent;
+  }
+  .navbar.open .navbar-brand,
+  .navbar.open .mobile-menu-btn {
+    color: #F7F5F2;
+  }
   .mobile-menu-btn {
     display: block;
     z-index: 100;
