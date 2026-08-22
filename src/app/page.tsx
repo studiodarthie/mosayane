@@ -15,7 +15,7 @@ export default async function Home() {
   const videoLinks = await prisma.mediaLink.findMany({
     where: { type: 'youtube' },
     orderBy: { createdAt: 'desc' },
-    take: 4
+    take: 6
   });
 
   const defaultBio = `Delphine Mebonde, alias Mosayane 2 Claire, est une artiste camerounaise qui allie musique, danse, chant et théâtre. Découverte avec son premier single « Yi Menga Sem », elle porte un mélange complexe de vécus et de cultures entre le Cameroun et le Sénégal.`;
@@ -31,6 +31,8 @@ export default async function Home() {
     { id: '2', title: 'MOSAYANE 2 CLAIRE — Là-bas comme ici (JMC sound checking)', url: 'https://www.youtube.com/embed/upHDIrSpD8s' },
     { id: '3', title: 'MOSAYANE 2 CLAIRE — Ekié, live (JMC 2023)', url: 'https://www.youtube.com/embed/rnD-k3rYuzk' },
     { id: '4', title: 'MOSAYANE 2 CLAIRE — Massuk, live acoustique (WAN Show 2022)', url: 'https://www.youtube.com/embed/qsGyYAJIGiA' },
+    { id: '5', title: 'MOSAYANE 2 CLAIRE — Afidi (paroles)', url: 'https://www.youtube.com/embed/qe6_np3GDt0' },
+    { id: '6', title: 'MOSAYANE 2 CLAIRE — Simplement (audio + lyric)', url: 'https://www.youtube.com/embed/oHCzLp1Vdpg' },
   ];
   const videosToDisplay = videoLinks.length > 0 ? videoLinks : defaultVideos;
 
