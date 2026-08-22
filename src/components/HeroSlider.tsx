@@ -51,7 +51,7 @@ export default function HeroSlider() {
       <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.05) 55%, rgba(10,10,10,0.35) 100%)', zIndex: 1 }}></div>
       
       {/* Static Info Elements */}
-      <div style={{ position: 'absolute', top: '100px', right: 'clamp(20px,5vw,72px)', fontSize: '13px', letterSpacing: '0.05em', textTransform: 'uppercase', color: '#F7F5F2', opacity: 0.85, zIndex: 2 }}>Artiste indépendante — Cameroun ↗</div>
+      <div style={{ position: 'absolute', top: '100px', right: 'clamp(20px,5vw,72px)', fontSize: '13px', letterSpacing: '0.05em', textTransform: 'uppercase', color: '#F7F5F2', opacity: 0.85, zIndex: 2 }}>Artiste indépendante — Cameroun | France ↗</div>
       <div style={{ position: 'absolute', left: '24px', bottom: '56px', writingMode: 'vertical-rl', fontSize: '11px', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#F7F5F2', opacity: 0.7, zIndex: 2 }}>↓ Explore / Scroll</div>
       
       {/* Main Content */}
