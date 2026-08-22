@@ -27,12 +27,12 @@ export default async function Home() {
   const musicToDisplay = musicLinks.length > 0 ? musicLinks : defaultMusic;
 
   const defaultVideos = [
-    { id: '1', title: 'MOSAYANE 2 Claire "NO WAY" — live acoustique (family time)', url: 'https://www.youtube.com/embed/zjZhEkcmtI8' },
-    { id: '2', title: 'MOSAYANE 2 CLAIRE — Là-bas comme ici (JMC sound checking)', url: 'https://www.youtube.com/embed/upHDIrSpD8s' },
-    { id: '3', title: 'MOSAYANE 2 CLAIRE — Ekié, live (JMC 2023)', url: 'https://www.youtube.com/embed/rnD-k3rYuzk' },
-    { id: '4', title: 'MOSAYANE 2 CLAIRE — Massuk, live acoustique (WAN Show 2022)', url: 'https://www.youtube.com/embed/qsGyYAJIGiA' },
-    { id: '5', title: 'MOSAYANE 2 CLAIRE — Afidi (paroles)', url: 'https://www.youtube.com/embed/qe6_np3GDt0' },
-    { id: '6', title: 'MOSAYANE 2 CLAIRE — Simplement (audio + lyric)', url: 'https://www.youtube.com/embed/oHCzLp1Vdpg' },
+    { id: '1', title: '"NO WAY" — live acoustique (family time)', url: 'https://www.youtube.com/embed/zjZhEkcmtI8' },
+    { id: '2', title: 'Là-bas comme ici (JMC sound checking)', url: 'https://www.youtube.com/embed/upHDIrSpD8s' },
+    { id: '3', title: 'Ekié, live (JMC 2023)', url: 'https://www.youtube.com/embed/rnD-k3rYuzk' },
+    { id: '4', title: 'Massuk, live acoustique (WAN Show 2022)', url: 'https://www.youtube.com/embed/qsGyYAJIGiA' },
+    { id: '5', title: 'Afidi (paroles)', url: 'https://www.youtube.com/embed/qe6_np3GDt0' },
+    { id: '6', title: 'Simplement (audio + lyric)', url: 'https://www.youtube.com/embed/oHCzLp1Vdpg' },
   ];
   const videosToDisplay = videoLinks.length > 0 ? videoLinks : defaultVideos;
 

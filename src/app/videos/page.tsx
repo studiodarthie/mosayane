@@ -7,18 +7,18 @@ export default async function VideosPage() {
   });
 
   const defaultVideos = [
-    { id: '1', title: 'MOSAYANE 2 Claire "NO WAY" — live acoustique (family time)', url: "https://www.youtube.com/embed/TNBlX8dF9XE" },
-    { id: '2', title: 'MOSAYANE 2 CLAIRE — Wetam (Fest. Int. Kouleur Acoustic 2022)', url: "https://www.youtube.com/embed/U1cWcamBK1o" },
+    { id: '1', title: '"NO WAY" — live acoustique (family time)', url: "https://www.youtube.com/embed/TNBlX8dF9XE" },
+    { id: '2', title: 'Wetam (Fest. Int. Kouleur Acoustic 2022)', url: "https://www.youtube.com/embed/U1cWcamBK1o" },
   ];
   
   const additionalVideosList = [
     { title: "Ma sūg (répétition)", date: "2 mars 2026" },
-    { title: 'MOSAYANE 2 Claire "NO WAY" — live acoustique (family time)', date: "21 oct. 2024" },
-    { title: "MOSAYANE 2 CLAIRE — Là-bas comme ici (JMC sound checking)", date: "28 avr. 2024" },
-    { title: "MOSAYANE 2 CLAIRE — Ekié (JMC) sound checking", date: "28 avr. 2024" },
-    { title: "MOSAYANE 2 CLAIRE — Afidi (paroles)", date: "6 oct. 2023" },
-    { title: "MOSAYANE 2 CLAIRE — Simplement (audio + lyric)", date: "27 févr. 2023" },
-    { title: "MOSAYANE 2 CLAIRE — Simplement, live (avec le groupe 5th Race)", date: "27 févr. 2023" },
+    { title: '"NO WAY" — live acoustique (family time)', date: "21 oct. 2024" },
+    { title: "Là-bas comme ici (JMC sound checking)", date: "28 avr. 2024" },
+    { title: "Ekié (JMC) sound checking", date: "28 avr. 2024" },
+    { title: "Afidi (paroles)", date: "6 oct. 2023" },
+    { title: "Simplement (audio + lyric)", date: "27 févr. 2023" },
+    { title: "Simplement, live (avec le groupe 5th Race)", date: "27 févr. 2023" },
     { title: "Journées musicales de Carthage — Là-bas comme ici (live JMC 2023)", date: "8 févr. 2023" }
   ];
 
