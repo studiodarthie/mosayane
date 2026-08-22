@@ -44,8 +44,8 @@ export default async function Home() {
       {/* Marquee */}
       <section className="bg-light" style={{ padding: '20px 0 40px', overflow: 'hidden' }}>
         <div className="marquee-container">
-          <span className="marquee-text">Talent musical — Nous inspirons & connectons — Talent musical — Nous inspirons & connectons —</span>
-          <span className="marquee-text">Talent musical — Nous inspirons & connectons — Talent musical — Nous inspirons & connectons —</span>
+          <span className="marquee-text">Musique, Danse & Théâtre — Vibrations afro-acoustiques — Une voix sans frontières — De Yaoundé au Monde — Racines & Universalité — </span>
+          <span className="marquee-text">Musique, Danse & Théâtre — Vibrations afro-acoustiques — Une voix sans frontières — De Yaoundé au Monde — Racines & Universalité — </span>
         </div>
       </section>
 
