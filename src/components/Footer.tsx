@@ -3,9 +3,9 @@ import Image from 'next/image';
 
 export function Footer() {
   return (
-    <footer className="footer-section">
-      <div className="layout-wrapper" style={{ padding: '64px 20px 48px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '48px', marginBottom: '64px' }}>
+    <footer className="footer">
+      <div className="layout-wrapper">
+        <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '32px', paddingBottom: '32px' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             <Image src="/uploads/logo-mosayane.png" alt="Mosayane" width={110} height={30} style={{ objectFit: 'contain' }} />
             <p style={{ fontSize: '14px', opacity: 0.6, margin: '10px 0 0', maxWidth: '32ch' }}>Auteure-compositrice-interprète, Yaoundé, Cameroun.</p>
