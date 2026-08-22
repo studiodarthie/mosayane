@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import HeroSlider from '@/components/HeroSlider';
 import { prisma } from '@/lib/prisma';
 import VideoPlayer from '@/components/VideoPlayer';
 
@@ -36,26 +37,7 @@ export default async function Home() {
   return (
     <main>
       {/* Hero Section */}
-      <section style={{ position: 'relative', height: '96vh', minHeight: '600px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', background: '#111' }}>
-        <Image 
-          src="/uploads/slider1-mosayane.jpg" 
-          alt="Mosayane" 
-          fill
-          style={{ objectFit: 'cover', objectPosition: 'center 30%' }} 
-          priority
-        />
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.05) 55%, rgba(10,10,10,0.35) 100%)' }}></div>
-        <div style={{ position: 'absolute', top: '100px', right: 'clamp(20px,5vw,72px)', fontSize: '13px', letterSpacing: '0.05em', textTransform: 'uppercase', color: '#F7F5F2', opacity: 0.85 }}>Artiste indépendante — Cameroun ↗</div>
-        <div style={{ position: 'absolute', left: '24px', bottom: '56px', writingMode: 'vertical-rl', fontSize: '11px', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#F7F5F2', opacity: 0.7 }}>↓ Explore / Scroll</div>
-        <div className="layout-wrapper" style={{ position: 'relative', paddingBottom: '64px' }}>
-          <h1 className="h1-hero" style={{ color: '#F7F5F2' }}>Mosayane</h1>
-          <p className="subtitle-hero" style={{ color: '#F7F5F2' }}>Une voix sans frontières</p>
-          <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
-            <Link href="/bio" className="btn-primary">Découvrir sa bio</Link>
-            <Link href="/music" className="btn-outline">Écouter</Link>
-          </div>
-        </div>
-      </section>
+      <HeroSlider />
 
       {/* Marquee */}
       <section className="bg-light" style={{ padding: '20px 0 40px', overflow: 'hidden' }}>
