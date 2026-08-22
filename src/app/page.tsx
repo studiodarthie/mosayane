@@ -9,11 +9,6 @@ import CustomAudioPlayer from '@/components/CustomAudioPlayer';
 export default async function Home() {
   const bio = await prisma.bioContent.findFirst({ where: { id: 1 } });
   
-  const musicLinks = await prisma.mediaLink.findMany({
-    where: { type: 'soundcloud' },
-    orderBy: { createdAt: 'desc' }
-  });
-
   const videoLinks = await prisma.mediaLink.findMany({
     where: { type: 'youtube' },
     orderBy: { createdAt: 'desc' },
@@ -22,11 +17,6 @@ export default async function Home() {
 
   const defaultBio = `Delphine Mebonde, alias Mosayane 2 Claire, est une artiste camerounaise qui allie musique, danse, chant et théâtre. Découverte avec son premier single « Yi Menga Sem », elle porte un mélange complexe de vécus et de cultures entre le Cameroun et le Sénégal.`;
   const bioText = bio?.content ? bio.content.substring(0, 250) + '...' : defaultBio;
-
-  const defaultMusic = [
-    { id: '1', title: 'Ekié', url: 'https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fuser-573562940%2F1-ekie-mosayane-web-mp3%3Futm_medium%3Dapi%26utm_campaign%3Dsocial_sharing%26utm_source%3Did_314642&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false' }
-  ];
-  const musicToDisplay = musicLinks.length > 0 ? musicLinks : defaultMusic;
 
   const defaultVideos = [
     { id: '1', title: '"NO WAY" — live acoustique (family time)', url: 'https://www.youtube.com/embed/zjZhEkcmtI8' },
@@ -81,31 +71,6 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Music Section */}
-      <section className="bg-light section-padding-bottom">
-        <div className="layout-wrapper" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: '24px', flexWrap: 'wrap', marginBottom: '28px' }}>
-          <div>
-            <span className="tag-label">Music</span>
-            <h2 className="h2-subtitle" style={{ color: 'var(--ink-light)' }}>Dûlû eh akab — voyages et partages</h2>
-          </div>
-          <Link href="/music" style={{ fontSize: '14px', fontWeight: 600, textDecoration: 'underline', color: 'var(--ink-light)' }}>Tous les titres →</Link>
-        </div>
-        <div className="layout-wrapper">
-          {musicToDisplay.slice(0, 1).map((music) => (
-            <div key={music.id} style={{ background: '#fff', borderRadius: '4px', padding: '12px 28px', boxShadow: '0 30px 70px rgba(0,0,0,0.1)' }}>
-              <iframe 
-                title={music.title} 
-                width="100%" 
-                height="80" 
-                scrolling="no" 
-                frameBorder="no" 
-                src={music.url} 
-                style={{ borderRadius: '4px', display: 'block' }}>
-              </iframe>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* Image Section */}
       <figure style={{ margin: 0, height: '64vh', minHeight: '360px', overflow: 'hidden', position: 'relative' }}>
