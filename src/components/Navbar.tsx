@@ -58,7 +58,7 @@ export function Navbar() {
             </a>
           </div>
         </div>
-        <a href="tel:+237699423171" className="btn-primary booking-btn">Booking &amp; Management</a>
+        <Link href="/contact" className="btn-primary booking-btn" onClick={() => setIsOpen(false)}>Booking &amp; Management</Link>
       </div>
     </nav>
   );
