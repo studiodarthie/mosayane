@@ -8,7 +8,7 @@ export function Footer() {
         <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '32px', paddingBottom: '32px' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             <Image src="/uploads/logo-mosayane.png" alt="Mosayane" width={110} height={30} style={{ objectFit: 'contain' }} />
-            <p style={{ fontSize: '14px', opacity: 0.6, margin: '10px 0 0', maxWidth: '32ch' }}>Auteure-compositrice-interprète, Yaoundé, Cameroun.</p>
+            <p style={{ fontSize: '14px', opacity: 0.6, margin: '10px 0 0', maxWidth: '32ch' }}>Auteure-compositrice-interprète.</p>
           </div>
           <div style={{ display: 'flex', gap: '48px', flexWrap: 'wrap' }}>
             <div className="footer-nav-col">
