@@ -9,7 +9,7 @@ const fraunces = Fraunces({ subsets: ["latin"], variable: '--font-fraunces' });
 
 export const metadata: Metadata = {
   title: "Mosayane",
-  description: "Auteure-compositrice-interprète, Yaoundé, Cameroun.",
+  description: "Auteure-compositrice-interprète.",
 };
 
 export default function RootLayout({
