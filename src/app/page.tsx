@@ -20,11 +20,11 @@ export default async function Home() {
 
   const defaultVideos = [
     { id: '1', title: 'Natural woman (reprise version Céline Dion)', url: 'https://www.youtube.com/embed/H1c55KY4ioA' },
-    { id: '2', title: 'Là-bas comme ici (JMC sound checking)', url: 'https://www.youtube.com/embed/upHDIrSpD8s' },
-    { id: '3', title: 'Ekié, live (JMC 2023)', url: 'https://www.youtube.com/embed/rnD-k3rYuzk' },
-    { id: '4', title: 'Massuk, live acoustique (WAN Show 2022)', url: 'https://www.youtube.com/embed/qsGyYAJIGiA' },
-    { id: '5', title: 'Afidi (paroles)', url: 'https://www.youtube.com/embed/qe6_np3GDt0' },
-    { id: '6', title: 'Simplement (audio + lyric)', url: 'https://www.youtube.com/embed/oHCzLp1Vdpg' },
+    { id: '2', title: 'Concert live, Institut Français de Yaoundé', url: 'https://www.youtube.com/embed/upHDIrSpD8s' },
+    { id: '3', title: 'Simplement, live (avec le groupe 5th Race)', url: 'https://www.youtube.com/embed/rnD-k3rYuzk' },
+    { id: '4', title: 'Ekié (MASA 2022)', url: 'https://www.youtube.com/embed/qsGyYAJIGiA' },
+    { id: '5', title: 'Là-bas comme ici, live (JMC 2023)', url: 'https://www.youtube.com/embed/qe6_np3GDt0' },
+    { id: '6', title: 'Ekié, live (JMC 2023)', url: 'https://www.youtube.com/embed/oHCzLp1Vdpg' },
   ];
   const videosToDisplay = videoLinks.length > 0 ? videoLinks : defaultVideos;
 

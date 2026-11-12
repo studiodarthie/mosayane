@@ -12,6 +12,7 @@ async function updateBio(formData: FormData) {
       create: { id: 1, content }
     });
     revalidatePath('/bio');
+    revalidatePath('/');
     revalidatePath('/admin/bio');
   }
 }

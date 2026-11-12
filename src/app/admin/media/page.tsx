@@ -13,6 +13,7 @@ async function addMedia(formData: FormData) {
     });
     revalidatePath('/music');
     revalidatePath('/videos');
+    revalidatePath('/');
     revalidatePath('/admin/media');
   }
 }
@@ -24,6 +25,7 @@ async function deleteMedia(formData: FormData) {
     await prisma.mediaLink.delete({ where: { id } });
     revalidatePath('/music');
     revalidatePath('/videos');
+    revalidatePath('/');
     revalidatePath('/admin/media');
   }
 }
