@@ -9,6 +9,7 @@ export default async function VideosPage() {
   const defaultVideos = [
     { id: '1', title: '"NO WAY" — live acoustique (family time)', url: "https://www.youtube.com/embed/TNBlX8dF9XE" },
     { id: '2', title: 'Wetam (Fest. Int. Kouleur Acoustic 2022)', url: "https://www.youtube.com/embed/U1cWcamBK1o" },
+    { id: '3', title: 'AFIDI (paroles)', url: "https://www.youtube.com/embed/dvaVBJ48Blc" },
   ];
   
   const additionalVideosList = [
